@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,6 +28,13 @@
 
         h1 {
             text-align: center;
+            color: #333;
+        }
+
+        .time-display {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 18px;
             color: #333;
         }
 
@@ -111,18 +117,13 @@
         .task-buttons .edit-btn:hover {
             background-color: #45a049;
         }
-
-        .time-display {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 18px;
-            color: #333;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>To-Do List</h1>
+        <div class="time-display" id="timeDisplay"></div> <!-- Menampilkan jam di sini -->
+
         <div class="input-container">
             <input type="text" id="taskName" placeholder="Enter Task Name...">
             <input type="text" id="description" placeholder="Enter Description...">
@@ -136,8 +137,6 @@
             <button onclick="addTask()">Add</button>
         </div>
         
-        <div class="time-display" id="timeDisplay"></div> <!-- Menampilkan jam di sini -->
-
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search tasks..." onkeyup="searchTasks()">
         </div>
