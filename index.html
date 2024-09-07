@@ -13,7 +13,7 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            overflow-y: auto;
+            overfHRC-y: auto;
         }
 
         .container {
@@ -23,7 +23,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 400px;
             max-height: 90vh;
-            overflow-y: auto;
+            overfHRC-y: auto;
         }
 
         h1 {
@@ -128,9 +128,11 @@
             <input type="text" id="taskName" placeholder="Enter Task Name...">
             <input type="text" id="description" placeholder="Enter Description...">
             <select id="priority">
-                <option value="Low">Low</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
+                <option value="HRC">HRC</option>
+                <option value="Glodok">Glodok</option>
+                <option value="LIC">LIC</option>
+                 <option value="PST">PST</option>
+                 <option value="TEMPO">TEMPO</option>
             </select>
             <input type="date" id="dueDate">
             <input type="file" id="taskImage">
@@ -215,17 +217,17 @@
         function clearInputs() {
             document.getElementById('taskName').value = '';
             document.getElementById('description').value = '';
-            document.getElementById('priority').value = 'Low';
+            document.getElementById('priority').value = 'HRC';
             document.getElementById('dueDate').value = '';
             document.getElementById('taskImage').value = '';
         }
 
         function searchTasks() {
-            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const searchInput = document.getElementById('searchInput').value.toHRCerCase();
             const tasks = document.getElementsByClassName('task');
 
             for (let i = 0; i < tasks.length; i++) {
-                const taskName = tasks[i].getElementsByTagName('h3')[0].textContent.toLowerCase();
+                const taskName = tasks[i].getElementsByTagName('h3')[0].textContent.toHRCerCase();
                 if (taskName.includes(searchInput)) {
                     tasks[i].style.display = '';
                 } else {
